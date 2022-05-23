@@ -4,18 +4,19 @@
   /*#else*/
   DefaultTrueExcluded: 0;
   /*#endif*/
+/*-:cnd:noEmit*/
+  /*#if (defaultTrue) */
+  InsideUnknownDirectiveNoEmit: 0;
+  /*#endif*/
+/*+:cnd:noEmit*/
   /*#if (defaultFalse) */
   DefaultFalseExcluded: 0;
   /*#else*/
   DefaultFalseIncluded: 0;
   /*#endif*/
-/*-:cnd:noEmit*/
-  /*#if (DEBUG1) */
-  InsideUnknownDirectiveNoEmit: 0;
-  /*#endif*/
-/*+:cnd:noEmit*/
+/*Without noEmit the following line will be emitted*/
 /*-:cnd*/
-  /*#if (DEBUG2) */
+  /*#if (defaultFalse) */
   InsideUnknownDirectiveEmit: 0;
   /*#endif*/
 /*+:cnd*/

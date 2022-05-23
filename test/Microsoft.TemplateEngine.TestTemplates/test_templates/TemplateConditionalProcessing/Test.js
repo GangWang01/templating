@@ -4,20 +4,21 @@ function DefaultTrueIncluded() { }
 function DefaultTrueExcluded() { }
 //#endif
 
-//#if defaultFalse
+//-:cnd:noEmit
+//#if defaultTrue
+function InsideUnknownDirectiveNoEmit() { }
+//#endif
+//+:cnd:noEmit
+
+//#if (defaultFalse)
 function DefaultFalseExcluded() { }
 //#else
 function DefaultFalseIncluded() { }
 //#endif
 
-//-:cnd:noEmit
-//#if DEBUG1
-function InsideUnknownDirectiveNoEmit() { }
-//#endif
-//+:cnd:noEmit
-
+// Without noEmit the following line will be emitted
 //-:cnd
-//#if DEBUG2
+//#if defaultFalse
 function InsideUnknownDirectiveEmit() { }
 //#endif
 //+:cnd

@@ -4,7 +4,7 @@ rem #else
 set type = "DefaultTrueExcluded"
 rem #endif
 
-rem #if defaultFalse
+rem #if (defaultFalse)
 set type = "DefaultFalseExcluded"
 rem #else
 set type = "DefaultFalseIncluded"

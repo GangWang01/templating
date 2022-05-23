@@ -8,20 +8,21 @@ namespace MyApp
     public class DefaultTrueExcluded { }
 #endif
 
-#if defaultFalse
+//-:cnd:noEmit
+#if defaultTrue
+    public class InsideUnknownDirectiveNoEmit { }
+#endif
+//+:cnd:noEmit
+
+#if (defaultFalse)
     public class DefaultFalseExcluded { }
 #else
     public class DefaultFalseIncluded { }
 #endif
 
-//-:cnd:noEmit
-#if DEBUG1
-    public class InsideUnknownDirectiveNoEmit { }
-#endif
-//+:cnd:noEmit
-
+// Without noEmit the following line will be emitted
 //-:cnd
-#if DEBUG2
+#if defaultFalse
     public class InsideUnknownDirectiveEmit { }
 #endif
 //+:cnd

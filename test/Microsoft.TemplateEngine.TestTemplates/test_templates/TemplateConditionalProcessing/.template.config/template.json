@@ -4,10 +4,10 @@
   "classifications": [ "Test Asset" ],
   "name": "ConditionalProcessing",
   "generatorVersions": "[1.0.0.0-*)",
-  "groupIdentity": "MyTest.ConditionalProcessing",
+  "groupIdentity": "TestAssets.ConditionalProcessing",
   "precedence": "100",
-  "identity": "MyTest.ConditionalProcessing",
-  "shortName": "MyTest.ConditionalProcessing",
+  "identity": "TestAssets.ConditionalProcessing",
+  "shortName": "TestAssets.ConditionalProcessing",
   "symbols": {
     "defaultFalse": {
       "type": "parameter",

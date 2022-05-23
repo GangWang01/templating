@@ -7,7 +7,14 @@ Module Module1
     End Sub
 '#End If
 
-'#If defaultFalse
+'-:cnd:noEmit
+'#If defaultTrue
+    Sub InsideUnknownDirectiveNoEmit()
+    End Sub
+'#End If
+'+:cnd:noEmit
+
+'#If (defaultFalse)
     Sub DefaultFalseExcluded()
     End Sub
 '#Else
@@ -15,15 +22,9 @@ Module Module1
     End Sub
 '#End If
 
-'-:cnd:noEmit
-'#If DEBUG1
-    Sub InsideUnknownDirectiveNoEmit()
-    End Sub
-'#End If
-'+:cnd:noEmit
-
+' Without noEmit the following line will be emitted
 '-:cnd
-'#If DEBUG2
+'#If defaultFalse
     Sub InsideUnknownDirectiveEmit()
     End Sub
 '#End If

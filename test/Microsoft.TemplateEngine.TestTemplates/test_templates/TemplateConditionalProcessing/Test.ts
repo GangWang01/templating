@@ -4,20 +4,21 @@ declare class DefaultTrueIncluded { }
 declare class DefaultTrueExcluded { }
 //#endif
 
+//-:cnd:noEmit
+//#if defaultTrue
+declare class InsideUnknownDirectiveNoEmit { }
+//#endif
+//+:cnd:noEmit
+
 //#if defaultFalse
 declare class DefaultFalseExcluded { }
 //#else
 declare class DefaultFalseIncluded { }
 //#endif
 
-//-:cnd:noEmit
-//#if DEBUG1
-declare class InsideUnknownDirectiveNoEmit { }
-//#endif
-//+:cnd:noEmit
-
+// Without noEmit the following line will be emitted
 //-:cnd
-//#if DEBUG2
+//#if defaultFalse
 declare class InsideUnknownDirectiveEmit { }
 //#endif
 //+:cnd

@@ -8,20 +8,21 @@ class DefaultTrueIncluded { }
 class DefaultTrueExcluded { }
 #endif
 
-#if defaultFalse
+//-:cnd:noEmit
+#if defaultTrue
+class InsideUnknownDirectiveNoEmit { }
+#endif
+//+:cnd:noEmit
+
+#if (defaultFalse)
 class DefaultFalseExcluded { }
 #else
 class DefaultFalseIncluded { }
 #endif
 
-//-:cnd:noEmit
-#if DEBUG1
-class InsideUnknownDirectiveNoEmit { }
-#endif
-//+:cnd:noEmit
-
+// Without noEmit the following line will be emitted
 //-:cnd
-#if DEBUG2
+#if defaultFalse
 class InsideUnknownDirectiveEmit { }
 #endif
 //+:cnd

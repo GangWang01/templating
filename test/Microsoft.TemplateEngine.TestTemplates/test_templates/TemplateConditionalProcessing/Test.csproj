@@ -18,7 +18,13 @@
 <!--/-:msbuild-conditional:noEmit -->
     <None Include="Foo5.cs" Condition="'$(defaultFalse)' == 'true'" />
 <!--/+:msbuild-conditional:noEmit -->
-    <None Include="Foo5.5.cs" Condition="'$(defaultTrue)' == 'true'" />
+    <None Include="Foo5.1.cs" Condition="'$(defaultTrue)' == 'true'" />
+
+<!-- Without noEmit the following line will be emitted -->
+<!--/-:msbuild-conditional -->
+    <None Include="Foo5.2.cs" Condition="'$(defaultFalse)' == 'true'" />
+<!--/+:msbuild-conditional -->
+    <None Include="Foo5.3.cs" Condition="'$(defaultTrue)' == 'true'" />
 
 <!--/-:cnd:noEmit -->
     <!--#if (defaultFalse) -->
