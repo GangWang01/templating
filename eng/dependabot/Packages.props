@@ -17,7 +17,7 @@
     <!--Analyzers-->
     <PackageReference Update="Microsoft.Net.Compilers.Toolset" Version="4.2.0" />
     <PackageReference Update="Microsoft.CodeAnalysis.CSharp.CodeStyle" Version="4.2.0" />
-    <PackageReference Update="Microsoft.CodeAnalysis.PublicApiAnalyzers" Version="3.3.4-beta1.22277.2" />
+    <PackageReference Update="Microsoft.CodeAnalysis.PublicApiAnalyzers" Version="3.3.4-beta1.22310.1" />
     <PackageReference Update="StyleCop.Analyzers" Version="1.2.0-beta.435" />
     <!--Test dependencies-->
     <PackageReference Update="FakeItEasy" Version="7.3.1" />
