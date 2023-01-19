@@ -175,6 +175,7 @@ namespace Microsoft.TemplateSearch.TemplateDiscovery.Test
         {
             string prereleaseSection = allowPrerelease ? @", ""allowPrerelease"": ""true""" : string.Empty;
             string jsonContent = $@"{{ ""sdk"": {{ ""version"": ""{sdkVersion}"", ""rollForward"": ""{rollForward}"" {prereleaseSection}}} }}";
+            Console.WriteLine($"Set .NET {sdkVersion} in global.json under {directory}.");
             File.WriteAllText(Path.Combine(directory, "global.json"), jsonContent);
         }
     }
