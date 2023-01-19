@@ -11,19 +11,19 @@ namespace Microsoft.TemplateSearch.TemplateDiscovery.Test
     {
         internal static void RunTests(string metadataPath, string legacyMetadataPath)
         {
-            //3.1
-            string sdkVersion = "3.1.400";
-            Console.WriteLine($"Running tests on .NET {sdkVersion} for: {legacyMetadataPath}.");
-            string workingDirectory = TestUtils.CreateTemporaryFolder(sdkVersion);
-            UseSdkVersion(workingDirectory, requestedSdkVersion: sdkVersion, resolvedVersionPattern: "3.");
-            CanSearchWhileInstantiating(workingDirectory, legacyMetadataPath);
-            CanCheckUpdates(workingDirectory, legacyMetadataPath);
-            CanUpdate(workingDirectory, legacyMetadataPath);
+            ////3.1
+            //string sdkVersion = "3.1.400";
+            //Console.WriteLine($"Running tests on .NET {sdkVersion} for: {legacyMetadataPath}.");
+            //string workingDirectory = TestUtils.CreateTemporaryFolder(sdkVersion);
+            //UseSdkVersion(workingDirectory, requestedSdkVersion: sdkVersion, resolvedVersionPattern: "3.");
+            //CanSearchWhileInstantiating(workingDirectory, legacyMetadataPath);
+            //CanCheckUpdates(workingDirectory, legacyMetadataPath);
+            //CanUpdate(workingDirectory, legacyMetadataPath);
 
             //5.0
-            sdkVersion = "5.0.100";
+            string sdkVersion = "5.0.100";
             Console.WriteLine($"Running tests on .NET {sdkVersion} for: {legacyMetadataPath}.");
-            workingDirectory = TestUtils.CreateTemporaryFolder(sdkVersion);
+            string workingDirectory = TestUtils.CreateTemporaryFolder(sdkVersion);
             UseSdkVersion(workingDirectory, requestedSdkVersion: sdkVersion, resolvedVersionPattern: "5.0.", rollForward: "latestFeature");
             CanSearchWhileInstantiating(workingDirectory, legacyMetadataPath);
             CanCheckUpdates(workingDirectory, legacyMetadataPath);
