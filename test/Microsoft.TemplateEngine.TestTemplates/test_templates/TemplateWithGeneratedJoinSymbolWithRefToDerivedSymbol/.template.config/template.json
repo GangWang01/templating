@@ -1,0 +1,44 @@
+{
+  "author": "Test Asset",
+  "classifications": [ "Test Asset" ],
+  "name": "TemplateGeneratedSymbolWithRefToDerivedSymbol",
+  "tags": { "type": "project" },
+  "generatorVersions": "[1.0.0.0-*)",
+  "groupIdentity": "TestAssets.TemplateGeneratedSymbolWithRefToDerivedSymbol",
+  "precedence": "100",
+  "identity": "TestAssets.TemplateGeneratedSymbolWithRefToDerivedSymbol",
+  "shortName": "TestAssets.TemplateGeneratedSymbolWithRefToDerivedSymbol",
+  "symbols": {
+    "NugetToolName": {
+      "type": "parameter",
+      "datatype": "text",
+      "isRequired": true,
+      "description": "client name"
+    },
+    "ToolNameCapitalCase": {
+      "type": "derived",
+      "datatype": "text",
+      "valueSource": "NugetToolName",
+      "valueTransform": "firstUpperCase",
+      "FileRename": "Tool"
+    },
+    "PackageName": {
+      "type": "generated",
+      "generator": "join",
+      "replaces": "PackageName_SpaceHolder",
+      "parameters": {
+        "symbols": [
+          {
+            "type": "ref",
+            "value": "ToolNameCapitalCase"
+          },
+          {
+            "type": "const",
+            "value": "Frameworks"
+          }
+        ],
+        "separator": "."
+      }
+    }
+  }
+}
